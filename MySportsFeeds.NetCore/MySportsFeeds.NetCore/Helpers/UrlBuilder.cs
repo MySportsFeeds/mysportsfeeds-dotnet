@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using MySportsFeeds.NetCore.Enums;
 
 namespace MySportsFeeds.NetCore.Helpers
@@ -130,20 +129,6 @@ namespace MySportsFeeds.NetCore.Helpers
             }
 
             return resultingUrl;
-        }
-
-        /// <summary>
-        /// Strings the parameters validator.
-        /// </summary>
-        /// <param name="validParamCount">The valid parameter count.</param>
-        /// <param name="inputs">The inputs.</param>
-        /// <exception cref="ArgumentException"></exception>
-        private static void StringParamsValidator(int validParamCount, params string[] inputs)
-        {
-            if (inputs.Length != validParamCount || inputs.Any(x => string.IsNullOrWhiteSpace(x)))
-            {
-                throw new ArgumentException(string.Format("Wrong number of parameters passed, expecting exactly '{0}' parameters", validParamCount));
-            }
         }
     }
 }

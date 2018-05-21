@@ -1,11 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace MySportsFeeds.NetCore.Workers
 {
@@ -23,19 +21,7 @@ namespace MySportsFeeds.NetCore.Workers
         /// The authentication header
         /// </summary>
         private AuthenticationHeaderValue authenticationHeader = null;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HttpCommunicationWorker"/> class.
-        /// </summary>
-        /// <param name="baseUrl">The base URL.</param>
-        /// <param name="base64Auth">The base64 authentication.</param>
-        public HttpCommunicationWorker(string baseUrl, string base64Auth)
-        {
-            this.baseUrl = new Uri(baseUrl);
-
-            SetBasicAuthentication(base64Auth);
-        }
-
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="HttpCommunicationWorker"/> class.
         /// </summary>
