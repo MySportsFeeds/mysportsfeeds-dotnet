@@ -120,7 +120,7 @@ namespace MySportsFeeds.NetCore.Helpers
                     partialUrl += string.Format("force={0}",requestOptions.Force.ToString().ToLower());
                 }
 
-                if (requestOptions.Teams.Count() > 0)
+                if (requestOptions.Teams != null)
                 {
                     partialUrl += string.IsNullOrWhiteSpace(partialUrl) && !urlHasQueryParams ? "?" : "&";
                     partialUrl += string.Format("team={0}", BuildTeamNames(requestOptions.Teams));

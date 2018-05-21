@@ -18,7 +18,6 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             var requestOptions = new Helpers.RequestOptions()
             {
                 ForDate = "20180520",
-                Force = true,
                 Teams = teams
             };
 

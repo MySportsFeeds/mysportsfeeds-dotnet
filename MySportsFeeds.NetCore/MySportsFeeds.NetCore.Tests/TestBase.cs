@@ -1,6 +1,3 @@
-using System;
-using Xunit;
-
 namespace MySportsFeeds.NetCore.IntegrationTests
 {
     /// <summary>
@@ -15,11 +12,11 @@ namespace MySportsFeeds.NetCore.IntegrationTests
         /// <summary>
         /// The username
         /// </summary>
-        protected readonly string USERNAME = "";
+        protected readonly string USERNAME = "ADD YOUR USER NAME HERE";
         /// <summary>
         /// The password
         /// </summary>
-        protected readonly string PASSWORD = "";
+        protected readonly string PASSWORD = "ADD YOUR PASSWORD HERE";
 
         /// <summary>
         /// My sports feeds client
