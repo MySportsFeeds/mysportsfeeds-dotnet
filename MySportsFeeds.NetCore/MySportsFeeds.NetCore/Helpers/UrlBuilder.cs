@@ -125,6 +125,12 @@ namespace MySportsFeeds.NetCore.Helpers
                     partialUrl += string.Format("team={0}", BuildTeamNames(requestOptions.Teams));
                 }
 
+                if (!String.IsNullOrEmpty(requestOptions.GameId))
+                {
+                    partialUrl += string.IsNullOrWhiteSpace(partialUrl) && !urlHasQueryParams ? "?" : "&";
+                    partialUrl += string.Format("gameid={0}", requestOptions.GameId);
+                }
+                
                 resultingUrl += partialUrl;
             }
 

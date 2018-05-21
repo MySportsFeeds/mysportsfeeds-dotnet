@@ -1,11 +1,9 @@
-﻿using MySportsFeeds.NetCore.Enums;
+﻿using System.Threading.Tasks;
+
+using MySportsFeeds.NetCore.Enums;
 using MySportsFeeds.NetCore.Helpers;
 using MySportsFeeds.NetCore.Models;
 using MySportsFeeds.NetCore.Workers;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MySportsFeeds.NetCore.Api
 {

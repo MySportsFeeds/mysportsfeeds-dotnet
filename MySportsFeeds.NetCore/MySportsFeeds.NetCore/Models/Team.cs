@@ -13,7 +13,7 @@ namespace MySportsFeeds.NetCore.Models
     /// <summary>
     /// Base Team
     /// </summary>
-    public abstract class Team
+    public class Team
     {
         /// <summary>
         /// Gets or sets the identifier.

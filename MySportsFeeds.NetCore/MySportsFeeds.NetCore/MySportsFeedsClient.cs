@@ -32,6 +32,7 @@ namespace MySportsFeeds.NetCore
         {
             DailyGameSchedule = new DailyGameSchedule(_httpWorker);
             Scoreboard = new Scoreboard(_httpWorker);
+            GamePlayByPlay = new GamePlayByPlay(_httpWorker);
         }
 
         /// <summary>
@@ -49,6 +50,13 @@ namespace MySportsFeeds.NetCore
         /// The scoreboard.
         /// </value>
         public Scoreboard Scoreboard { get; private set; }
-
+        
+        /// <summary>
+        /// Gets the game play by play.
+        /// </summary>
+        /// <value>
+        /// The game play by play.
+        /// </value>
+        public GamePlayByPlay GamePlayByPlay { get; private set; }
     }
 }

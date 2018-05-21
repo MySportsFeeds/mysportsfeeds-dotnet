@@ -11,11 +11,8 @@ namespace MySportsFeeds.NetCore.Models
         public Scoreboard Scoreboard { get; set; }
     }
     
-    public class Game
+    public class ScoreboardGame : Game
     {
-        [JsonProperty("ID")]
-        public string ID { get; set; }
-
         [JsonProperty("scheduleStatus")]
         public string ScheduleStatus { get; set; }
 
@@ -27,21 +24,6 @@ namespace MySportsFeeds.NetCore.Models
 
         [JsonProperty("delayedOrPostponedReason")]
         public object DelayedOrPostponedReason { get; set; }
-
-        [JsonProperty("date")]
-        public string Date { get; set; }
-
-        [JsonProperty("time")]
-        public string Time { get; set; }
-
-        [JsonProperty("awayTeam")]
-        public AwayTeam AwayTeam { get; set; }
-
-        [JsonProperty("homeTeam")]
-        public HomeTeam HomeTeam { get; set; }
-
-        [JsonProperty("location")]
-        public string Location { get; set; }
     }
 
     public class Inning
@@ -65,7 +47,7 @@ namespace MySportsFeeds.NetCore.Models
     public class GameScore
     {
         [JsonProperty("game")]
-        public Game Game { get; set; }
+        public ScoreboardGame Game { get; set; }
 
         [JsonProperty("isUnplayed")]
         public string IsUnplayed { get; set; }

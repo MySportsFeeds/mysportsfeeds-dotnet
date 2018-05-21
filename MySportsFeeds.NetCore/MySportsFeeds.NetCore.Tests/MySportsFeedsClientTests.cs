@@ -7,7 +7,9 @@ namespace MySportsFeeds.NetCore.IntegrationTests
     public class MySportsFeedsClientTests : TestBase
     {
         private const string FOR_DATE = "20180520";
-        
+        private const string GAME_ID = "44050";
+
+
         [Fact]
         public async Task Can_Get_All_Daily_Game_Schedules()
         {
@@ -71,6 +73,26 @@ namespace MySportsFeeds.NetCore.IntegrationTests
 
             Assert.NotNull(response);
             Assert.Equal(15, response.Scoreboard.GameScore.Count);
+        }
+
+        [Fact]
+        public async Task Can_Get_All_Game_Play_By_Plays()
+        {
+            // Arrange
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                GameId = GAME_ID
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.GamePlayByPlay.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+            Assert.Equal(77, response.GamePlayByPlay.AtBats.AtBat.Count);
         }
     }
 }

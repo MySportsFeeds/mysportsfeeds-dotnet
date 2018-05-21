@@ -17,13 +17,9 @@ namespace MySportsFeeds.NetCore.Models
         [JsonProperty("gameentry")]
         public List<GameEntry> GameEntry { get; set; }
     }
-
-   
-    public class GameEntry
+    
+    public class GameEntry : Game
     {
-        [JsonProperty("id")]
-        public string Id { get; set; }
-
         [JsonProperty("scheduleStatus")]
         public string ScheduleStatus { get; set; }
 
@@ -35,20 +31,5 @@ namespace MySportsFeeds.NetCore.Models
 
         [JsonProperty("delayedOrPostponedReason")]
         public string DelayedOrPostponedReason { get; set; }
-
-        [JsonProperty("date")]
-        public string Date { get; set; }
-
-        [JsonProperty("time")]
-        public string Time { get; set; }
-
-        [JsonProperty("awayTeam")]
-        public Team AwayTeam { get; set; }
-
-        [JsonProperty("homeTeam")]
-        public HomeTeam HomeTeam { get; set; }
-
-        [JsonProperty("location")]
-        public string Location { get; set; }
     }
 }

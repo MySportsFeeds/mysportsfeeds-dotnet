@@ -36,6 +36,14 @@ namespace MySportsFeeds.NetCore.Helpers
         /// to the team names included.
         /// </value>
         public string[] Teams { get; set; }
+
+        /// <summary>
+        /// Gets or sets the game identifier.
+        /// </summary>
+        /// <value>
+        /// The game identifier.
+        /// </value>
+        public string GameId { get; set; }
     }
 
     

@@ -17,7 +17,6 @@ namespace MySportsFeeds.NetCore.IntegrationTests
         /// The password
         /// </summary>
         protected readonly string PASSWORD = "ADD YOUR PASSWORD HERE";
-
         /// <summary>
         /// My sports feeds client
         /// </summary>
