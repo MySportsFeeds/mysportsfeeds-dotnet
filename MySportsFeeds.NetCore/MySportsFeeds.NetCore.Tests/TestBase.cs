@@ -3,15 +3,32 @@ using Xunit;
 
 namespace MySportsFeeds.NetCore.IntegrationTests
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public abstract class TestBase
     {
-        // data required to run this tests, please check App.config and modify the values to mapping to your local stash instance
+        /// <summary>
+        /// The base URL
+        /// </summary>
         protected readonly string BASE_URL = "https://api.mysportsfeeds.com/";
+        /// <summary>
+        /// The username
+        /// </summary>
         protected readonly string USERNAME = "";
+        /// <summary>
+        /// The password
+        /// </summary>
         protected readonly string PASSWORD = "";
 
+        /// <summary>
+        /// My sports feeds client
+        /// </summary>
         protected MySportsFeedsClient mySportsFeedsClient;
-        
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestBase"/> class.
+        /// </summary>
         public TestBase()
         {
             mySportsFeedsClient = new MySportsFeedsClient(BASE_URL, USERNAME, PASSWORD);
