@@ -18,36 +18,7 @@ namespace MySportsFeeds.NetCore.Models
         public List<GameEntry> GameEntry { get; set; }
     }
 
-    public class AwayTeam
-    {
-        [JsonProperty("ID")]
-        public string Id { get; set; }
-
-        [JsonProperty("City")]
-        public string City { get; set; }
-
-        [JsonProperty("Name")]
-        public string Name { get; set; }
-
-        [JsonProperty("Abbreviation")]
-        public string Abbreviation { get; set; }
-    }
-
-    public class HomeTeam
-    {
-        [JsonProperty("ID")]
-        public string Id { get; set; }
-
-        [JsonProperty("City")]
-        public string City { get; set; }
-
-        [JsonProperty("Name")]
-        public string Name { get; set; }
-
-        [JsonProperty("Abbreviation")]
-        public string Abbreviation { get; set; }
-    }
-
+   
     public class GameEntry
     {
         [JsonProperty("id")]
@@ -72,7 +43,7 @@ namespace MySportsFeeds.NetCore.Models
         public string Time { get; set; }
 
         [JsonProperty("awayTeam")]
-        public AwayTeam AwayTeam { get; set; }
+        public Team AwayTeam { get; set; }
 
         [JsonProperty("homeTeam")]
         public HomeTeam HomeTeam { get; set; }

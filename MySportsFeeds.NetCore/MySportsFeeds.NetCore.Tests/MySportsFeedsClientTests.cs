@@ -52,5 +52,25 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(2, response.DailyGameSchedule.GameEntry.Count);
         }
+
+        [Fact]
+        public async Task Can_Get_All_Scoreboards()
+        {
+            // Arrange
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                ForDate = FOR_DATE
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.Scoreboard.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+            Assert.Equal(15, response.Scoreboard.GameScore.Count);
+        }
     }
 }

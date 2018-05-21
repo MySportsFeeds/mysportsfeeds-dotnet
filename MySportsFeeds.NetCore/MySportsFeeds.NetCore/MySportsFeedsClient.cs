@@ -31,6 +31,7 @@ namespace MySportsFeeds.NetCore
         private void InjectDependencies()
         {
             DailyGameSchedule = new DailyGameSchedule(_httpWorker);
+            Scoreboard = new Scoreboard(_httpWorker);
         }
 
         /// <summary>
@@ -40,5 +41,14 @@ namespace MySportsFeeds.NetCore
         /// The daily game schedule.
         /// </value>
         public DailyGameSchedule DailyGameSchedule { get; private set; }
+
+        /// <summary>
+        /// Gets the scoreboard.
+        /// </summary>
+        /// <value>
+        /// The scoreboard.
+        /// </value>
+        public Scoreboard Scoreboard { get; private set; }
+
     }
 }
