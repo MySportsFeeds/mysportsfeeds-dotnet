@@ -17,11 +17,12 @@ namespace MySportsFeeds.NetCore
         /// Initializes a new instance of the <see cref="MySportsFeedsClient"/> class.
         /// </summary>
         /// <param name="baseUrl">The base URL.</param>
+        /// <param name="version">The version.</param>
         /// <param name="username">The username.</param>
         /// <param name="password">The password.</param>
-        public MySportsFeedsClient(string baseUrl, string username, string password)
+        public MySportsFeedsClient(string baseUrl, string version, string username, string password)
         {
-            _httpWorker = new HttpCommunicationWorker(baseUrl, username, password);
+            _httpWorker = new HttpCommunicationWorker(baseUrl, version, username, password);
             InjectDependencies();
         }
 
@@ -33,6 +34,7 @@ namespace MySportsFeeds.NetCore
             DailyGameSchedule = new DailyGameSchedule(_httpWorker);
             Scoreboard = new Scoreboard(_httpWorker);
             GamePlayByPlay = new GamePlayByPlay(_httpWorker);
+            CurrentSeason = new CurrentSeason(_httpWorker);
         }
 
         /// <summary>
@@ -58,5 +60,13 @@ namespace MySportsFeeds.NetCore
         /// The game play by play.
         /// </value>
         public GamePlayByPlay GamePlayByPlay { get; private set; }
+
+        /// <summary>
+        /// Gets the current season.
+        /// </summary>
+        /// <value>
+        /// The current season.
+        /// </value>
+        public CurrentSeason CurrentSeason { get; private set; }
     }
 }

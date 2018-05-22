@@ -6,16 +6,13 @@ using MySportsFeeds.NetCore.Models;
 using MySportsFeeds.NetCore.Workers;
 
 namespace MySportsFeeds.NetCore.Api
-{
-    /// <summary>
-    /// 
-    /// </summary>
+{ 
     public class GamePlayByPlay
     {
         /// <summary>
         /// The URL
         /// </summary>
-        private const string Url = "v1.2/pull/{0}/{1}//game_playbyplay.json";
+        private const string Url = "/pull/{0}/{1}/game_playbyplay.json";
 
         /// <summary>
         /// The HTTP worker
@@ -32,7 +29,7 @@ namespace MySportsFeeds.NetCore.Api
         }
 
         /// <summary>
-        /// Gets the specified league.
+        /// Gets the specified play by play for a game.
         /// </summary>
         /// <param name="league">The league.</param>
         /// <param name="year">The year.</param>
@@ -41,7 +38,8 @@ namespace MySportsFeeds.NetCore.Api
         /// <returns></returns>
         public async Task<GamePlayByPlayResponse> Get(League league, int year, SeasonType seasonType, RequestOptions requestOptions = null)
         {
-            string requestUrl = UrlBuilder.FormatRestApiUrl(Url, league, year, seasonType, requestOptions);
+            var url = string.Concat(_httpWorker.Version, Url);
+            string requestUrl = UrlBuilder.FormatRestApiUrl(url, league, year, seasonType, requestOptions);
 
             return await _httpWorker.GetAsync<GamePlayByPlayResponse>(requestUrl).ConfigureAwait(false);
         }
