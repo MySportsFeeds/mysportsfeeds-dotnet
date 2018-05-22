@@ -9,14 +9,22 @@ namespace MySportsFeeds.NetCore.IntegrationTests
         /// The base URL
         /// </summary>
         protected readonly string BASE_URL = "https://api.mysportsfeeds.com/";
+
+        /// <summary>
+        /// The version
+        /// </summary>
+        protected readonly string VERSION = "v1.2";
+
         /// <summary>
         /// The username
         /// </summary>
         protected readonly string USERNAME = "ADD YOUR USERNAME HERE";
+
         /// <summary>
         /// The password
         /// </summary>
         protected readonly string PASSWORD = "ADD YOUR PASSWORD HERE";
+        
         /// <summary>
         /// My sports feeds client
         /// </summary>
@@ -27,7 +35,7 @@ namespace MySportsFeeds.NetCore.IntegrationTests
         /// </summary>
         public TestBase()
         {
-            mySportsFeedsClient = new MySportsFeedsClient(BASE_URL, USERNAME, PASSWORD);
+            mySportsFeedsClient = new MySportsFeedsClient(BASE_URL, VERSION, USERNAME, PASSWORD);
         }
     }
 }

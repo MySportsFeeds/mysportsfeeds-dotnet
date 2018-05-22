@@ -12,7 +12,7 @@ namespace MySportsFeeds.NetCore.Api
         /// <summary>
         /// The URL
         /// </summary>
-        private const string Url = "v1.2/pull/{0}/{1}/scoreboard.json";
+        private const string Url = "/pull/{0}/{1}/scoreboard.json";
 
         /// <summary>
         /// The HTTP worker
@@ -27,10 +27,19 @@ namespace MySportsFeeds.NetCore.Api
         {
             _httpWorker = httpWorker;
         }
-        
+
+        /// <summary>
+        /// Gets the specified scoreboard.
+        /// </summary>
+        /// <param name="league">The league.</param>
+        /// <param name="year">The year.</param>
+        /// <param name="seasonType">Type of the season.</param>
+        /// <param name="requestOptions">The request options.</param>
+        /// <returns></returns>
         public async Task<ScoreboardResponse> Get(League league, int year, SeasonType seasonType, RequestOptions requestOptions = null)
         {
-            string requestUrl = UrlBuilder.FormatRestApiUrl(Url, league, year, seasonType, requestOptions);
+            var url = string.Concat(_httpWorker.Version, Url);
+            string requestUrl = UrlBuilder.FormatRestApiUrl(url, league, year, seasonType, requestOptions);
 
             return await _httpWorker.GetAsync<ScoreboardResponse>(requestUrl).ConfigureAwait(false);
         }

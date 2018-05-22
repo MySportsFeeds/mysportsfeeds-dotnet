@@ -94,5 +94,25 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
             Assert.Equal(77, response.GamePlayByPlay.AtBats.AtBat.Count);
         }
+
+        [Fact]
+        public async Task Can_Get_Current_Season()
+        {
+            // Arrange
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                ForDate = FOR_DATE
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.CurrentSeason.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+            Assert.Single(response.CurrentSeason.Season);
+        }
     }
 }

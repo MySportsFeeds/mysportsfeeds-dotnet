@@ -18,6 +18,14 @@ namespace MySportsFeeds.NetCore.Workers
         private Uri baseUrl;
 
         /// <summary>
+        /// Gets or sets the version.
+        /// </summary>
+        /// <value>
+        /// The version.
+        /// </value>
+        public string Version { get; set; }
+
+        /// <summary>
         /// The authentication header
         /// </summary>
         private AuthenticationHeaderValue authenticationHeader = null;
@@ -28,10 +36,11 @@ namespace MySportsFeeds.NetCore.Workers
         /// <param name="baseUrl">The base URL.</param>
         /// <param name="username">The username.</param>
         /// <param name="password">The password.</param>
-        public HttpCommunicationWorker(string baseUrl, string username, string password)
+        public HttpCommunicationWorker(string baseUrl, string version, string username, string password)
         {
+            Version = version;
             this.baseUrl = new Uri(baseUrl);
-
+            
             SetBasicAuthentication(username, password);
         }
 
