@@ -9,12 +9,12 @@ namespace MySportsFeeds.NetCore.Api
     /// <summary>
     /// 
     /// </summary>
-    public class DailyGameSchedule
+    public class DailyDfs
     {
         /// <summary>
         /// The URL
         /// </summary>
-        private const string Url = "/pull/{0}/{1}/daily_game_schedule.json";
+        private const string Url = "/pull/{0}/{1}/daily_dfs.json";
 
         /// <summary>
         /// The HTTP worker
@@ -22,16 +22,16 @@ namespace MySportsFeeds.NetCore.Api
         private HttpCommunicationWorker _httpWorker;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DailyGameSchedule"/> class.
+        /// Initializes a new instance of the <see cref="DailyDfs"/> class.
         /// </summary>
         /// <param name="httpWorker">The HTTP worker.</param>
-        internal DailyGameSchedule(HttpCommunicationWorker httpWorker)
+        internal DailyDfs(HttpCommunicationWorker httpWorker)
         {
             _httpWorker = httpWorker;
         }
 
         /// <summary>
-        /// Gets the daily game schedule.
+        /// Gets the daily fantasy sports points.
         /// </summary>
         /// <param name="league">The league.</param>
         /// <param name="year">The year.</param>
