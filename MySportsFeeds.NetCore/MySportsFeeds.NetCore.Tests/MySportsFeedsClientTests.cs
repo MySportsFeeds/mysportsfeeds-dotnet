@@ -114,5 +114,20 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
             Assert.Single(response.CurrentSeason.Season);
         }
+
+        [Fact]
+        public async Task Can_Get_Active_Players()
+        {
+            // Arrange
+            // Act
+
+            var response = await mySportsFeedsClient.ActivePlayers.Get(League.MLB, 2018, SeasonType.Regular);
+
+            // Assert
+
+            Assert.NotNull(response);
+            
+        }
+
     }
 }

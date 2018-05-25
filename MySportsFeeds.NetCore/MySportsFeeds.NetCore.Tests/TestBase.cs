@@ -18,12 +18,12 @@ namespace MySportsFeeds.NetCore.IntegrationTests
         /// <summary>
         /// The username
         /// </summary>
-        protected readonly string USERNAME = "ADD YOUR USERNAME HERE";
+        protected readonly string USERNAME = "jarnone";
 
         /// <summary>
         /// The password
         /// </summary>
-        protected readonly string PASSWORD = "ADD YOUR PASSWORD HERE";
+        protected readonly string PASSWORD = "Thanky0u";
         
         /// <summary>
         /// My sports feeds client
