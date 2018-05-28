@@ -6,8 +6,8 @@ namespace MySportsFeeds.NetCore.IntegrationTests
 {
     public class MySportsFeedsClientTests : TestBase
     {
-        private const string FOR_DATE = "20180520";
-        private const string GAME_ID = "44050";
+        private const string FOR_DATE = "20180527";
+        private const string GAME_ID = "44218";
 
 
         [Fact]
@@ -125,8 +125,29 @@ namespace MySportsFeeds.NetCore.IntegrationTests
 
             // Assert
 
+            Assert.NotNull(response);   
+        }
+
+        [Fact]
+        public async Task Can_Get_Player_Game_Logs()
+        {
+            // Arrange
+            string[] teams = new string[2];
+            teams[0] = "bos";
+            teams[1] = "mil";
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                Teams = teams
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.PlayerGameLogs.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
             Assert.NotNull(response);
-            
         }
 
     }
