@@ -58,7 +58,31 @@ namespace MySportsFeeds.NetCore.Helpers
 
             return returnStatus;
         }
-        
+
+        /// <summary>
+        /// Builds the player stats options.
+        /// </summary>
+        /// <param name="playerStatsOptions">The player stats options.</param>
+        /// <returns></returns>
+        private static string BuildPlayerStatsOptions(string[] playerStatsOptions)
+        {
+            string playerStatsString = string.Empty;
+
+            for (int i = 0; i < playerStatsOptions.Length; i++)
+            {
+                if (i == 0)
+                {
+                    playerStatsString += playerStatsOptions[i];
+                }
+                else
+                {
+                    playerStatsString += string.Concat(",", playerStatsOptions[i]);
+                }
+            }
+
+            return playerStatsString;
+        }
+
         /// <summary>
         /// Builds the team names.
         /// </summary>
@@ -123,6 +147,13 @@ namespace MySportsFeeds.NetCore.Helpers
                 {
                     partialUrl += string.IsNullOrWhiteSpace(partialUrl) && !urlHasQueryParams ? "?" : "&";
                     partialUrl += string.Format("team={0}", BuildTeamNames(requestOptions.Teams));
+                }
+
+                // TODO: Make the various filter options generic at the base. 
+                if (requestOptions.PlayerStatsMlb != null)
+                {
+                    partialUrl += string.IsNullOrWhiteSpace(partialUrl) && !urlHasQueryParams ? "?" : "&";
+                    partialUrl += string.Format("playerstats={0}", BuildTeamNames(requestOptions.PlayerStatsMlb));
                 }
 
                 if (!String.IsNullOrEmpty(requestOptions.GameId))

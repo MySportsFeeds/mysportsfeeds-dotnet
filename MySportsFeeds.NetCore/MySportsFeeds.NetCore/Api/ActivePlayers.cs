@@ -43,6 +43,5 @@ namespace MySportsFeeds.NetCore.Api
 
             return await _httpWorker.GetAsync<ActivePlayersResponse>(requestUrl).ConfigureAwait(false);
         }
-
     }
 }
