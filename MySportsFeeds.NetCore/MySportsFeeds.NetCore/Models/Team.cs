@@ -10,6 +10,10 @@ namespace MySportsFeeds.NetCore.Models
     {
     }
 
+    public class Team2 : Team
+    {
+    }
+
     /// <summary>
     /// Base Team
     /// </summary>
