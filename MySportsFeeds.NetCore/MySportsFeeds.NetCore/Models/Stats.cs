@@ -2,22 +2,6 @@
 
 namespace MySportsFeeds.NetCore.Models
 {
-
-    public class Stats
-    {
-        
-        public AtBats AtBats { get; set; }
-        public Runs Runs { get; set; }
-        public Hits Hits { get; set; }
-        public Homeruns Homeruns { get; set; }
-        public EarnedRuns EarnedRuns { get; set; }
-        public HitsAllowed HitsAllowed { get; set; }
-        public RunsAllowed RunsAllowed { get; set; }
-        public EarnedRunsAllowed EarnedRunsAllowed { get; set; }
-        public HomerunsAllowed HomerunsAllowed { get; set; }
-    }
-
-
     public class StatsBase
     {
         public AtBatStats AtBats { get; set; }
@@ -28,8 +12,7 @@ namespace MySportsFeeds.NetCore.Models
         public HitsAllowed HitsAllowed { get; set; }
         public RunsAllowed RunsAllowed { get; set; }
         public EarnedRunsAllowed EarnedRunsAllowed { get; set; }
-        public HomerunsAllowed HomerunsAllowed { get; set; }
-        
+        public HomerunsAllowed HomerunsAllowed { get; set; }   
     }
     
     public class GameLogStats : StatsBase
@@ -159,6 +142,19 @@ namespace MySportsFeeds.NetCore.Models
         public GamesStarted GamesStarted { get; set; }
     }
 
+    public class Stats
+    {
+        public AtBats AtBats { get; set; }
+        public Runs Runs { get; set; }
+        public Hits Hits { get; set; }
+        public Homeruns Homeruns { get; set; }
+        public EarnedRuns EarnedRuns { get; set; }
+        public HitsAllowed HitsAllowed { get; set; }
+        public RunsAllowed RunsAllowed { get; set; }
+        public EarnedRunsAllowed EarnedRunsAllowed { get; set; }
+        public HomerunsAllowed HomerunsAllowed { get; set; }
+    }
+
     public class Stat
     {
         [JsonProperty("@category")]
@@ -177,47 +173,38 @@ namespace MySportsFeeds.NetCore.Models
 
     public class AtBatStats : Stat
     {
-
     }
 
     public class Runs : Stat
     {
-
     }
 
     public class Hits : Stat
     {
-
     }
 
     public class Homeruns : Stat
     {
-
     }
 
     public class EarnedRuns : Stat
     {
-
     }
 
     public class HitsAllowed : Stat
     {
-
     }
 
     public class RunsAllowed : Stat
     {
-
     }
 
     public class EarnedRunsAllowed : Stat
     {
-
     }
 
     public class HomerunsAllowed : Stat
     {
-
     }
     
     public class SecondBaseHits : Stat
@@ -242,7 +229,6 @@ namespace MySportsFeeds.NetCore.Models
 
     public class BatterSwings : Stat
     {
-
     }
 
     public class BatterStrikes : Stat
@@ -364,12 +350,10 @@ namespace MySportsFeeds.NetCore.Models
 
     public class BatterSacrificeFlies : Stat
     {
-
     }
 
     public class TotalBases : Stat
     {
-
     }
 
     public class ExtraBaseHits : Stat

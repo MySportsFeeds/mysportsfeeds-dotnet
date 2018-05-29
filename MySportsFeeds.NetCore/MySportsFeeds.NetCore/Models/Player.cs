@@ -2,6 +2,24 @@
 
 namespace MySportsFeeds.NetCore.Models
 {
+    public class Player
+    {
+        [JsonProperty("ID")]
+        public string ID { get; set; }
+
+        [JsonProperty("LastName")]
+        public string LastName { get; set; }
+
+        [JsonProperty("FirstName")]
+        public string FirstName { get; set; }
+
+        [JsonProperty("JerseyNumber")]
+        public string JerseyNumber { get; set; }
+
+        [JsonProperty("Position")]
+        public string Position { get; set; }
+    }
+
     public class BattingPlayer : Player
     {
     }
@@ -60,23 +78,5 @@ namespace MySportsFeeds.NetCore.Models
 
     public class IncomingPlayer : Player
     {
-    }
-
-    public class Player
-    {
-        [JsonProperty("ID")]
-        public string ID { get; set; }
-
-        [JsonProperty("LastName")]
-        public string LastName { get; set; }
-
-        [JsonProperty("FirstName")]
-        public string FirstName { get; set; }
-
-        [JsonProperty("JerseyNumber")]
-        public string JerseyNumber { get; set; }
-
-        [JsonProperty("Position")]
-        public string Position { get; set; }
     }
 }
