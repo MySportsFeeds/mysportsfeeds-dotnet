@@ -44,6 +44,14 @@ namespace MySportsFeeds.NetCore.Helpers
         /// The game identifier.
         /// </value>
         public string GameId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the player stats MLB.
+        /// </summary>
+        /// <value>
+        /// The player stats MLB.
+        /// </value>
+        public string[] PlayerStatsMlb { get; set; }
     }
 
     

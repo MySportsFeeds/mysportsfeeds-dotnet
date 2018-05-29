@@ -2,18 +2,6 @@
 
 namespace MySportsFeeds.NetCore.Models
 {
-    public class AwayTeam : Team
-    {   
-    }
-    
-    public class HomeTeam : Team
-    {
-    }
-
-    public class Team2 : Team
-    {
-    }
-
     /// <summary>
     /// Base Team
     /// </summary>
@@ -54,5 +42,17 @@ namespace MySportsFeeds.NetCore.Models
         /// </value>
         [JsonProperty("Abbreviation")]
         public string Abbreviation { get; set; }
+    }
+
+    public class AwayTeam : Team
+    {   
+    }
+    
+    public class HomeTeam : Team
+    {
+    }
+
+    public class Team2 : Team
+    {
     }
 }

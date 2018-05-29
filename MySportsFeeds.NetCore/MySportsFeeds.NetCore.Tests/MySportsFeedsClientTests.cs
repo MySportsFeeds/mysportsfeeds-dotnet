@@ -150,5 +150,46 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
         }
 
+        [Fact]
+        public async Task Can_Get_Roster_Players()
+        {
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                ForDate = FOR_DATE
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.RosterPlayers.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+        
+        [Fact]
+        public async Task Can_Get_Cumulative_Player_Stats()
+        {
+            // Arrange
+            string[] filterOptions = new string[4];
+            filterOptions[0] = "AB";
+            filterOptions[1] = "H";
+            filterOptions[2] = "HR";
+            filterOptions[3] = "ER";
+            
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                PlayerStatsMlb = filterOptions
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.CumulativePlayerStats.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
     }
 }
