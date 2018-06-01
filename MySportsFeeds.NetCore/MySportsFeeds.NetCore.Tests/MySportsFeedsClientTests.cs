@@ -214,5 +214,19 @@ namespace MySportsFeeds.NetCore.IntegrationTests
 
             Assert.NotNull(response);
         }
+
+        [Fact]
+        public async Task Can_Get_Full_Game_Schedule()
+        {
+            // Arrange
+           
+            // Act
+
+            var response = await mySportsFeedsClient.FullGameSchedule.Get(League.MLB, 2018, SeasonType.Regular);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
     }
 }
