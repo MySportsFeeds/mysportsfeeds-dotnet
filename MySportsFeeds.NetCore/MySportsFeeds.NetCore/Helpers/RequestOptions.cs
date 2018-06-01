@@ -52,7 +52,13 @@ namespace MySportsFeeds.NetCore.Helpers
         /// The player stats MLB.
         /// </value>
         public string[] PlayerStatsMlb { get; set; }
-    }
 
-    
+        /// <summary>
+        /// Gets or sets the team stats MLB.
+        /// </summary>
+        /// <value>
+        /// The team stats MLB.
+        /// </value>
+        public string[] TeamStatsMlb { get; set; }
+    }   
 }

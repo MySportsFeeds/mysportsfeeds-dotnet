@@ -191,5 +191,28 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
         }
 
+        [Fact]
+        public async Task Can_Get_Conference_Team_Standings()
+        {
+            // Arrange
+            string[] filterOptions = new string[4];
+            filterOptions[0] = "W";
+            filterOptions[1] = "L";
+            filterOptions[2] = "RF";
+            filterOptions[3] = "RA";
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                PlayerStatsMlb = filterOptions
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.ConferenceTeamStandings.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
     }
 }

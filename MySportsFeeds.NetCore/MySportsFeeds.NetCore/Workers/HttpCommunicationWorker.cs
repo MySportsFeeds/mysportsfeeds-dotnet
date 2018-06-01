@@ -7,9 +7,6 @@ using Newtonsoft.Json;
 
 namespace MySportsFeeds.NetCore.Workers
 {
-    /// <summary>
-    /// 
-    /// </summary>
     internal class HttpCommunicationWorker
     {
         /// <summary>
