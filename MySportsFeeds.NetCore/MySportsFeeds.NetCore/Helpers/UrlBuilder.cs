@@ -156,6 +156,12 @@ namespace MySportsFeeds.NetCore.Helpers
                     partialUrl += string.Format("playerstats={0}", BuildTeamNames(requestOptions.PlayerStatsMlb));
                 }
 
+                if (requestOptions.TeamStatsMlb != null)
+                {
+                    partialUrl += string.IsNullOrWhiteSpace(partialUrl) && !urlHasQueryParams ? "?" : "&";
+                    partialUrl += string.Format("teamstats={0}", BuildTeamNames(requestOptions.TeamStatsMlb));
+                }
+
                 if (!String.IsNullOrEmpty(requestOptions.GameId))
                 {
                     partialUrl += string.IsNullOrWhiteSpace(partialUrl) && !urlHasQueryParams ? "?" : "&";

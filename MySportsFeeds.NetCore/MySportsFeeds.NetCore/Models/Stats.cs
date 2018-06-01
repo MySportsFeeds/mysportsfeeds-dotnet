@@ -154,7 +154,7 @@ namespace MySportsFeeds.NetCore.Models
         public EarnedRunsAllowed EarnedRunsAllowed { get; set; }
         public HomerunsAllowed HomerunsAllowed { get; set; }
     }
-
+    
     public class Stat
     {
         [JsonProperty("@category")]
