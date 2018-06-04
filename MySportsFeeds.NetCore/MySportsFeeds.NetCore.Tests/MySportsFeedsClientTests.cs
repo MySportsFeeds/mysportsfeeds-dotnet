@@ -214,5 +214,70 @@ namespace MySportsFeeds.NetCore.IntegrationTests
 
             Assert.NotNull(response);
         }
+
+        [Fact]
+        public async Task Can_Get_Full_Game_Schedule()
+        {
+            // Arrange
+            // Act
+
+            var response = await mySportsFeedsClient.FullGameSchedule.Get(League.MLB, 2018, SeasonType.Regular);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
+        [Fact]
+        public async Task Can_Get_Daily_Player_Stats()
+        {
+            // Arrange
+            
+            string[] filterOptions = new string[5];
+            filterOptions[0] = "AB";
+            filterOptions[1] = "H";
+            filterOptions[2] = "HR";
+            filterOptions[3] = "ER";
+            filterOptions[4] = "R";
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                ForDate = FOR_DATE,
+                PlayerStatsMlb = filterOptions
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.DailyPlayerStats.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
+        [Fact]
+        public async Task Can_Get_Division_Team_Standings()
+        {
+            // Arrange
+
+            string[] filterOptions = new string[4];
+            filterOptions[0] = "W";
+            filterOptions[1] = "L";
+            filterOptions[2] = "RF";
+            filterOptions[3] = "RA";
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                TeamStatsMlb = filterOptions
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.DivisionTeamStandings.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
     }
 }
