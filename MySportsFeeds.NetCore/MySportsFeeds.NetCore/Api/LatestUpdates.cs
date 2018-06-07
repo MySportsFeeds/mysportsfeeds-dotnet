@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MySportsFeeds.NetCore.Enums;
 using MySportsFeeds.NetCore.Helpers;
 using MySportsFeeds.NetCore.Models;
@@ -38,10 +39,12 @@ namespace MySportsFeeds.NetCore.Api
         /// <param name="seasonType">Type of the season.</param>
         /// <param name="requestOptions">The request options.</param>
         /// <returns></returns>
-        public object Get(League league, int year, SeasonType seasonType, RequestOptions requestOptions = null)
+        public async Task<LastUpdatesReponse> Get(League league, int year, SeasonType seasonType, RequestOptions requestOptions = null)
         {
-            throw new NotImplementedException();
+            var url = string.Concat(_httpWorker.Version, Url);
+            string requestUrl = UrlBuilder.FormatRestApiUrl(url, league, year, seasonType, requestOptions);
+
+            return await _httpWorker.GetAsync<LastUpdatesReponse>(requestUrl).ConfigureAwait(false);
         }
     }
 }
-

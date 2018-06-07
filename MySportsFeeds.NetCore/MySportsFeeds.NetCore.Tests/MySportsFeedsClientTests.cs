@@ -279,5 +279,44 @@ namespace MySportsFeeds.NetCore.IntegrationTests
 
             Assert.NotNull(response);
         }
+
+        [Fact]
+        public async Task Can_Get_Latest_Updates()
+        {
+            // Arrange
+            // Act
+
+            var response = await mySportsFeedsClient.LatestUpdates.Get(League.MLB, 2018, SeasonType.Regular);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
+        [Fact]
+        public async Task Can_Get_Overall_Team_Standings()
+        {
+            // Arrange
+
+            string[] filterOptions = new string[4];
+            filterOptions[0] = "W";
+            filterOptions[1] = "L";
+            filterOptions[2] = "RF";
+            filterOptions[3] = "RA";
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                TeamStatsMlb = filterOptions
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.OverallTeamStandings.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
     }
 }
