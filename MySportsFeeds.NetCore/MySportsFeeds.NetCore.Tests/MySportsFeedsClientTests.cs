@@ -318,5 +318,27 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
         }
 
+        [Fact]
+        public async Task Can_Get_Team_Game_Logs()
+        {
+            // Arrange
+            string[] teams = new string[1];
+            teams[0] = "bos";
+
+            var requestOptions = new Helpers.RequestOptions()
+            {
+                Teams = teams
+            };
+
+            // Act
+
+            var response = await mySportsFeedsClient.TeamGameLogs.Get(League.MLB, 2018, SeasonType.Regular, requestOptions);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
+
     }
 }
