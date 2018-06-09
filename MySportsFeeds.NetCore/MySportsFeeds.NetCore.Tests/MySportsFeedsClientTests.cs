@@ -339,6 +339,19 @@ namespace MySportsFeeds.NetCore.IntegrationTests
             Assert.NotNull(response);
         }
 
+        [Fact]
+        public async Task Can_Get_Player_Injuries()
+        {
+            // Arrange
+            // Act
+
+            var response = await mySportsFeedsClient.PlayerInjuries.Get(League.MLB, 2018, SeasonType.Regular);
+
+            // Assert
+
+            Assert.NotNull(response);
+        }
+
 
     }
 }
