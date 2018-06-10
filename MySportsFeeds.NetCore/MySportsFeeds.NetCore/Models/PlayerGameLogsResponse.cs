@@ -9,7 +9,7 @@ namespace MySportsFeeds.NetCore.Models
         public Playergamelogs PlayerGameLogs { get; set; }
     }
     
-    public class Gamelog
+    public class PlayerGamelog
     {
         [JsonProperty("game")]
         public Game Game { get; set; }
@@ -30,6 +30,6 @@ namespace MySportsFeeds.NetCore.Models
         public string LastUpdatedOn { get; set; }
 
         [JsonProperty("gamelogs")]
-        public List<Gamelog> GameLogs { get; set; }
+        public List<PlayerGamelog> GameLogs { get; set; }
     }
 }
