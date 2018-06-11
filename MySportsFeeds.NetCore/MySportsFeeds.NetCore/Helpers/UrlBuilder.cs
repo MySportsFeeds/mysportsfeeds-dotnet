@@ -116,9 +116,9 @@ namespace MySportsFeeds.NetCore.Helpers
         /// <param name="seasonType">Type of the season.</param>
         /// <param name="requestOptions">The request options.</param>
         /// <returns></returns>
-        public static string FormatRestApiUrl(string restUrl, League league, int year, SeasonType seasonType, RequestOptions requestOptions = null)
+        public static string FormatRestApiUrl(string restUrl, int year, SeasonType seasonType, RequestOptions requestOptions = null)
         {
-            string resultingUrl = String.Format(restUrl, league.ToString().ToLower(), BuildSeasonString(year, seasonType));
+            string resultingUrl = String.Format(restUrl, BuildSeasonString(year, seasonType));
 
             if (requestOptions != null)
             {
